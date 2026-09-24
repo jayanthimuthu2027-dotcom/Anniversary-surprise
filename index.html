@@ -9,7 +9,7 @@
 <style>
 
 /* =========================
-   GENERAL
+   BASIC
 ========================= */
 
 * {
@@ -18,8 +18,8 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     overflow-x: hidden;
+    font-family: Arial, sans-serif;
     background: #fff0f5;
 }
 
@@ -37,6 +37,7 @@ body {
 .screen.active {
     display: flex;
 }
+
 
 /* =========================
    SCREEN 1 - TEDDY
@@ -71,6 +72,7 @@ body {
 }
 
 @keyframes teddyFloat {
+
     0%,100% {
         transform: translateY(0);
     }
@@ -78,7 +80,9 @@ body {
     50% {
         transform: translateY(-12px);
     }
+
 }
+
 
 /* =========================
    SCREEN 2 - BALLOONS
@@ -105,11 +109,15 @@ body {
     height: 105px;
     border-radius: 50%;
     cursor: pointer;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     font-size: 45px;
+
     animation: balloonFloat 2s infinite ease-in-out;
+
     transition: 0.3s;
 }
 
@@ -134,6 +142,7 @@ body {
 }
 
 @keyframes balloonFloat {
+
     0%,100% {
         transform: translateY(0);
     }
@@ -141,6 +150,7 @@ body {
     50% {
         transform: translateY(-12px);
     }
+
 }
 
 .balloonMessage {
@@ -150,6 +160,7 @@ body {
     min-height: 35px;
     font-weight: bold;
 }
+
 
 /* =========================
    SCREEN 3 - ENVELOPE
@@ -161,32 +172,45 @@ body {
 
 .envelope {
     position: relative;
+
     width: 300px;
     height: 200px;
+
     cursor: pointer;
+
     transition: transform 0.8s ease;
 }
 
 .envelope-body {
     position: absolute;
+
     width: 100%;
     height: 100%;
+
     background: #fffaf0;
+
     border-radius: 10px;
+
     box-shadow: 0 15px 35px rgba(0,0,0,0.18);
 }
 
 .flap {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 0;
     height: 0;
+
     border-left: 150px solid transparent;
     border-right: 150px solid transparent;
     border-top: 110px solid #e9a3b5;
+
     z-index: 3;
+
     transform-origin: top;
+
     transition: transform 0.8s ease;
 }
 
@@ -200,13 +224,19 @@ body {
 
 .envelopeText {
     position: absolute;
+
     z-index: 5;
+
     width: 100%;
+
     top: 80px;
+
     color: #a52b50;
+
     font-size: 21px;
     font-weight: bold;
 }
+
 
 /* =========================
    SCREEN 4 - LETTER
@@ -214,17 +244,25 @@ body {
 
 #screen4 {
     background: linear-gradient(135deg, #fff0f3, #ffe5ec);
+
     padding: 35px 15px;
 }
 
 .letter {
     width: 95%;
     max-width: 700px;
+
     background: #fffaf0;
+
     padding: 35px;
+
     border-radius: 18px;
+
     box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-    font-family: "Segoe Script", "Brush Script MT", cursive;
+
+    font-family: "Segoe Script",
+                 "Brush Script MT",
+                 cursive;
 }
 
 .letter h1 {
@@ -234,147 +272,212 @@ body {
 
 .memories {
     display: flex;
+
     justify-content: center;
+
     gap: 12px;
+
     flex-wrap: wrap;
+
     margin-bottom: 30px;
 }
 
 .memories img {
     width: 190px;
     height: 220px;
+
     object-fit: cover;
+
     border-radius: 14px;
+
     box-shadow: 0 7px 18px rgba(0,0,0,0.18);
 }
 
+
+/* LETTER LINE BY LINE */
+
 .line {
     opacity: 0;
+
     transform: translateY(15px);
+
     transition: all 0.8s ease;
-    font-family: "Segoe Script", "Brush Script MT", cursive;
+
+    font-family: "Segoe Script",
+                 "Brush Script MT",
+                 cursive;
+
     font-size: 21px;
+
     line-height: 1.8;
+
     color: #8b3155;
+
     margin: 10px 0;
 }
 
 .showLine {
     opacity: 1;
+
     transform: translateY(0);
 }
 
+
 /* =========================
-   SURPRISE BUTTON
+   ONE MORE SURPRISE BUTTON
 ========================= */
 
 .surpriseBtn {
+
     opacity: 0;
+
     pointer-events: none;
 
     margin-top: 30px;
 
     background: #d62839;
+
     color: white;
 
     border: none;
+
     padding: 15px 32px;
 
     border-radius: 35px;
 
     font-size: 19px;
-    font-family: "Segoe Script", "Brush Script MT", cursive;
+
+    font-family: "Segoe Script",
+                 "Brush Script MT",
+                 cursive;
 
     cursor: pointer;
 
-    box-shadow: 0 8px 22px rgba(214,40,57,0.35);
+    box-shadow:
+        0 8px 22px rgba(214,40,57,0.35);
 
     transition: 0.3s;
 }
 
 .surpriseBtn.showButton {
+
     opacity: 1;
+
     pointer-events: auto;
+
     animation: buttonAppear 1s ease;
 }
 
 .surpriseBtn:hover {
+
     transform: scale(1.08);
 }
 
 @keyframes buttonAppear {
+
     from {
+
         opacity: 0;
-        transform: translateY(20px) scale(0.8);
+
+        transform:
+            translateY(20px)
+            scale(0.8);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
+
 }
 
+
 /* =========================
-   FINAL SURPRISE SCREEN
+   SCREEN 5 - FINAL SURPRISE
 ========================= */
 
 #screen5 {
+
     position: relative;
+
     overflow: hidden;
 
     background:
-        radial-gradient(circle at center,
-        #fff5f7 0%,
-        #ffdce6 45%,
-        #ffb6c9 100%);
+        radial-gradient(
+            circle at center,
+            #fff8fa 0%,
+            #ffdce6 45%,
+            #ffb6c9 100%
+        );
 }
 
-/* Heading */
+
+/* FINAL TITLE */
 
 .finalTitle {
+
     position: relative;
-    z-index: 20;
+
+    z-index: 30;
 
     color: #a71945;
 
-    font-family: "Segoe Script", "Brush Script MT", cursive;
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        cursive;
 
     font-size: 32px;
 
     margin-bottom: 10px;
 
-    animation: titleGlow 2s infinite alternate;
+    animation:
+        titleGlow 2s infinite alternate;
 }
 
 @keyframes titleGlow {
+
     from {
         text-shadow: 0 0 5px #fff;
     }
 
     to {
-        text-shadow: 0 0 20px #ff6f91;
+        text-shadow:
+            0 0 20px #ff6f91;
     }
+
 }
 
-/* Bouquet area */
+
+/* =========================
+   BOUQUET
+========================= */
 
 .bouquetArea {
+
     position: relative;
 
     width: 360px;
+
     height: 430px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 }
 
-/* Bouquet */
 
 .bouquet {
+
     position: relative;
 
-    z-index: 10;
+    z-index: 20;
 
     font-size: 145px;
 
@@ -383,259 +486,384 @@ body {
         bouquetFloat 3s ease-in-out 1.5s infinite;
 }
 
+
 @keyframes bouquetEnter {
+
     0% {
+
         opacity: 0;
-        transform: translateY(180px) scale(0.4);
+
+        transform:
+            translateY(180px)
+            scale(0.4);
     }
 
     70% {
+
         opacity: 1;
-        transform: translateY(-10px) scale(1.08);
+
+        transform:
+            translateY(-10px)
+            scale(1.08);
     }
 
     100% {
+
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
+
 }
 
+
 @keyframes bouquetFloat {
+
     0%,100% {
-        transform: translateY(0) rotate(-2deg);
+
+        transform:
+            translateY(0)
+            rotate(-2deg);
     }
 
     50% {
-        transform: translateY(-15px) rotate(2deg);
+
+        transform:
+            translateY(-15px)
+            rotate(2deg);
     }
+
 }
 
+
 /* =========================
-   ORBIT MESSAGES
+   MOVING MESSAGES
+   BOTTOM TO TOP
 ========================= */
 
 .orbit {
-    position: absolute;
 
-    width: 100%;
-    height: 100%;
+    position: absolute;
 
     left: 0;
     top: 0;
 
-    animation: orbitRotate 18s linear infinite;
+    width: 100%;
+    height: 100%;
+
+    z-index: 25;
+
+    pointer-events: none;
+
 }
 
-@keyframes orbitRotate {
-    from {
-        transform: rotate(0deg);
-    }
 
-    to {
-        transform: rotate(360deg);
-    }
-}
+/* Each message */
 
 .orbitMessage {
+
     position: absolute;
 
-    background: rgba(255,255,255,0.75);
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        rgba(255,255,255,0.88);
 
     color: #a71945;
 
-    padding: 8px 14px;
+    padding: 9px 18px;
 
-    border-radius: 20px;
+    border-radius: 25px;
 
-    font-family: "Segoe Script", "Brush Script MT", cursive;
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        cursive;
 
-    font-size: 14px;
+    font-size: 16px;
 
     font-weight: bold;
 
-    box-shadow: 0 5px 15px rgba(120,20,50,0.15);
-
     white-space: nowrap;
+
+    box-shadow:
+        0 5px 18px
+        rgba(120,20,50,0.18);
+
+    opacity: 0;
+
+    animation:
+        messageUp 10s linear infinite;
 }
 
-/* Message positions */
+
+/* Different timing */
 
 .message1 {
-    top: 10px;
-    left: 115px;
+    animation-delay: 0s;
 }
 
 .message2 {
-    top: 65px;
-    right: -5px;
+    animation-delay: 1.4s;
 }
 
 .message3 {
-    top: 180px;
-    right: -45px;
+    animation-delay: 2.8s;
 }
 
 .message4 {
-    bottom: 70px;
-    right: 5px;
+    animation-delay: 4.2s;
 }
 
 .message5 {
-    bottom: 5px;
-    left: 100px;
+    animation-delay: 5.6s;
 }
 
 .message6 {
-    bottom: 70px;
-    left: -30px;
+    animation-delay: 7s;
 }
 
 .message7 {
-    top: 180px;
-    left: -55px;
+    animation-delay: 8.4s;
 }
+
+
+/* Bottom -> Top */
+
+@keyframes messageUp {
+
+    0% {
+
+        bottom: -80px;
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.8);
+    }
+
+    10% {
+
+        opacity: 1;
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    90% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        bottom: 480px;
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.9);
+    }
+
+}
+
 
 /* =========================
    FINAL MESSAGE
 ========================= */
 
 .finalMessage {
+
     position: relative;
-    z-index: 20;
+
+    z-index: 30;
 
     margin-top: 5px;
 
     color: #a71945;
 
-    font-family: "Segoe Script", "Brush Script MT", cursive;
+    font-family:
+        "Segoe Script",
+        "Brush Script MT",
+        cursive;
 
     font-size: 24px;
 
     line-height: 1.8;
 
-    animation: finalMessageAppear 2s ease;
+    animation:
+        finalMessageAppear 2s ease;
 }
 
 .finalForever {
+
     font-size: 20px;
 }
 
+
 @keyframes finalMessageAppear {
+
     from {
+
         opacity: 0;
-        transform: translateY(25px);
+
+        transform:
+            translateY(25px);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
+
 }
+
 
 /* =========================
    FLOATING HEARTS
 ========================= */
 
 .heart {
+
     position: fixed;
 
     bottom: -30px;
 
     font-size: 22px;
 
-    animation: heartFloat 5s linear forwards;
+    animation:
+        heartFloat 5s linear forwards;
 
     pointer-events: none;
 
-    z-index: 50;
+    z-index: 100;
 }
 
 @keyframes heartFloat {
 
     0% {
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
+
         opacity: 1;
     }
 
     100% {
-        transform: translateY(-110vh) scale(1.5);
+
+        transform:
+            translateY(-110vh)
+            scale(1.5);
+
         opacity: 0;
     }
+
 }
 
+
 /* =========================
-   RESPONSIVE
+   MOBILE
 ========================= */
 
 @media (max-width: 600px) {
 
     #screen1 h1 {
+
         font-size: 30px;
     }
 
+
     .letter {
+
         padding: 22px 15px;
     }
 
+
     .letter h1 {
+
         font-size: 26px;
     }
 
+
     .line {
+
         font-size: 18px;
     }
 
+
     .memories img {
+
         width: 135px;
+
         height: 165px;
     }
 
+
     .envelope {
+
         width: 280px;
     }
 
+
     .flap {
+
         border-left-width: 140px;
+
         border-right-width: 140px;
     }
 
+
     .finalTitle {
+
         font-size: 26px;
     }
 
+
     .bouquetArea {
+
         width: 320px;
+
         height: 400px;
     }
 
+
     .bouquet {
+
         font-size: 115px;
     }
 
+
     .orbitMessage {
-        font-size: 11px;
-        padding: 6px 9px;
+
+        font-size: 13px;
+
+        padding:
+            7px 12px;
     }
 
-    .message2 {
-        right: 0;
-    }
-
-    .message3 {
-        right: -10px;
-    }
-
-    .message6 {
-        left: 0;
-    }
-
-    .message7 {
-        left: -5px;
-    }
 
     .finalMessage {
+
         font-size: 20px;
     }
+
 }
 
 </style>
@@ -645,13 +873,15 @@ body {
 <body>
 
 
-<!-- =====================================
-     SCREEN 1 - TEDDY
-===================================== -->
+<!-- ==================================================
+     SCREEN 1
+================================================== -->
 
 <div id="screen1" class="screen active">
 
-    <h1>Happy Anniversary ❤️</h1>
+    <h1>
+        Happy Anniversary ❤️
+    </h1>
 
     <p>
         My Love, I have a little surprise for you... 🥰
@@ -664,21 +894,28 @@ body {
         alt="Teddy"
     >
 
-    <p>Click the teddy 🧸❤️</p>
+    <p>
+        Click the teddy 🧸❤️
+    </p>
 
 </div>
 
 
 
-<!-- =====================================
-     SCREEN 2 - BALLOONS
-===================================== -->
+<!-- ==================================================
+     SCREEN 2
+================================================== -->
 
 <div id="screen2" class="screen">
 
-    <h1>A Little Surprise 🎈❤️</h1>
+    <h1>
+        A Little Surprise 🎈❤️
+    </h1>
 
-    <p>Pop all the balloons...</p>
+    <p>
+        Pop all the balloons...
+    </p>
+
 
     <div class="balloons">
 
@@ -689,6 +926,7 @@ body {
             🎈
         </div>
 
+
         <div
             class="balloon"
             onclick="popBalloon(this, 1)"
@@ -696,12 +934,14 @@ body {
             🎈
         </div>
 
+
         <div
             class="balloon"
             onclick="popBalloon(this, 2)"
         >
             🎈
         </div>
+
 
         <div
             class="balloon"
@@ -712,21 +952,30 @@ body {
 
     </div>
 
-    <div id="balloonMessage" class="balloonMessage"></div>
+
+    <div
+        id="balloonMessage"
+        class="balloonMessage"
+    ></div>
 
 </div>
 
 
 
-<!-- =====================================
-     SCREEN 3 - ENVELOPE
-===================================== -->
+<!-- ==================================================
+     SCREEN 3
+================================================== -->
 
 <div id="screen3" class="screen">
 
-    <h1>A Letter For You 💌</h1>
+    <h1>
+        A Letter For You 💌
+    </h1>
 
-    <p>Click the envelope ❤️</p>
+    <p>
+        Click the envelope ❤️
+    </p>
+
 
     <div
         class="envelope"
@@ -747,15 +996,17 @@ body {
 
 
 
-<!-- =====================================
+<!-- ==================================================
      SCREEN 4 - LETTER
-===================================== -->
+================================================== -->
 
 <div id="screen4" class="screen">
 
     <div class="letter">
 
-        <h1>Our Beautiful Journey ❤️</h1>
+        <h1>
+            Our Beautiful Journey ❤️
+        </h1>
 
 
         <div class="memories">
@@ -782,40 +1033,46 @@ body {
             From the day you came into my life...
         </p>
 
+
         <p class="line">
             Every moment became more beautiful. ❤️
         </p>
+
 
         <p class="line">
             You are not just my love...
         </p>
 
+
         <p class="line">
             You are my happiness and my special person. 🥰
         </p>
+
 
         <p class="line">
             Thank you for every beautiful memory.
         </p>
 
+
         <p class="line">
             Thank you for always being beside me. ❤️
         </p>
+
 
         <p class="line">
             I will choose you, today and always.
         </p>
 
+
         <p class="line">
             Happy Anniversary, My Love! 💕
         </p>
+
 
         <p class="line">
             Forever & Always ♾️❤️
         </p>
 
-
-        <!-- FINAL BUTTON -->
 
         <button
             id="surpriseButton"
@@ -831,52 +1088,66 @@ body {
 
 
 
-<!-- =====================================
+<!-- ==================================================
      SCREEN 5 - FINAL SURPRISE
-===================================== -->
+================================================== -->
 
 <div id="screen5" class="screen">
 
+
     <div class="finalTitle">
+
         One More Surprise For You 💝
+
     </div>
+
 
 
     <div class="bouquetArea">
 
-        <!-- ORBIT MESSAGES -->
+
+        <!-- MOVING MESSAGES -->
 
         <div class="orbit">
+
 
             <div class="orbitMessage message1">
                 You're My Everything ❤️
             </div>
 
+
             <div class="orbitMessage message2">
                 My Special Person 🥰
             </div>
+
 
             <div class="orbitMessage message3">
                 Forever With You 💕
             </div>
 
+
             <div class="orbitMessage message4">
                 Every Moment Is Precious ❤️
             </div>
+
 
             <div class="orbitMessage message5">
                 You Are My Happiness 💖
             </div>
 
+
             <div class="orbitMessage message6">
                 Love You Always 💋
             </div>
+
 
             <div class="orbitMessage message7">
                 Forever & Always ♾️❤️
             </div>
 
+
         </div>
+
 
 
         <!-- BOUQUET -->
@@ -885,7 +1156,9 @@ body {
             💐
         </div>
 
+
     </div>
+
 
 
     <div class="finalMessage">
@@ -898,15 +1171,16 @@ body {
 
     </div>
 
+
 </div>
 
 
 
 <script>
 
-/* =====================================
+/* ==================================================
    SCREEN CHANGE
-===================================== */
+================================================== */
 
 function showScreen(id) {
 
@@ -918,16 +1192,18 @@ function showScreen(id) {
 
         });
 
+
     document
         .getElementById(id)
         .classList.add("active");
+
 }
 
 
 
-/* =====================================
-   TEDDY CLICK
-===================================== */
+/* ==================================================
+   TEDDY
+================================================== */
 
 function openTeddy() {
 
@@ -939,11 +1215,12 @@ function openTeddy() {
 
 
 
-/* =====================================
+/* ==================================================
    BALLOONS
-===================================== */
+================================================== */
 
 let popped = 0;
+
 
 let messages = [
 
@@ -960,20 +1237,30 @@ let messages = [
 
 function popBalloon(balloon, number) {
 
-    if (balloon.dataset.popped === "yes") {
+    if (
+        balloon.dataset.popped === "yes"
+    ) {
+
         return;
+
     }
+
 
     balloon.dataset.popped = "yes";
 
-    document.getElementById("balloonMessage").innerText =
-        messages[number];
+
+    document
+        .getElementById("balloonMessage")
+        .innerText = messages[number];
+
 
     balloon.innerHTML = "💥";
 
+
     setTimeout(function() {
 
-        balloon.style.visibility = "hidden";
+        balloon.style.visibility =
+            "hidden";
 
     }, 500);
 
@@ -998,14 +1285,15 @@ function popBalloon(balloon, number) {
 
 
 
-/* =====================================
-   OPEN LETTER
-===================================== */
+/* ==================================================
+   LETTER
+================================================== */
 
 function openLetter() {
 
     let envelope =
         document.querySelector(".envelope");
+
 
     envelope.classList.add("open");
 
@@ -1028,15 +1316,21 @@ function openLetter() {
                 line.classList.add("showLine");
 
 
-                /* Show button after LAST LINE */
+                /* LAST LINE */
 
-                if (index === lines.length - 1) {
+                if (
+                    index ===
+                    lines.length - 1
+                ) {
 
                     setTimeout(function() {
 
                         document
-                            .getElementById("surpriseButton")
-                            .classList.add("showButton");
+                            .getElementById(
+                                "surpriseButton"
+                            )
+                            .classList
+                            .add("showButton");
 
                     }, 1200);
 
@@ -1052,37 +1346,65 @@ function openLetter() {
 
 
 
-/* =====================================
+/* ==================================================
    FINAL SURPRISE
-===================================== */
+================================================== */
 
 function openFinalSurprise() {
 
     showScreen("screen5");
 
-    createHearts();
 
-    createHearts();
+    /* Create some hearts */
 
-    createHearts();
+    for (
+        let i = 0;
+        i < 8;
+        i++
+    ) {
+
+        setTimeout(
+            createHearts,
+            i * 300
+        );
+
+    }
 
 }
 
 
 
-/* =====================================
+/* ==================================================
    FLOATING HEARTS
-===================================== */
+================================================== */
 
 function createHearts() {
 
-    let heart = document.createElement("div");
+    let heart =
+        document.createElement("div");
 
-    heart.className = "heart";
+
+    heart.className =
+        "heart";
+
+
+    let heartTypes = [
+        "❤️",
+        "💕",
+        "💖",
+        "💗",
+        "💘",
+        "💝"
+    ];
+
 
     heart.innerHTML =
-        ["❤️","💕","💖","💗","💘","💝"]
-        [Math.floor(Math.random() * 6)];
+        heartTypes[
+            Math.floor(
+                Math.random()
+                * heartTypes.length
+            )
+        ];
 
 
     heart.style.left =
@@ -1090,10 +1412,15 @@ function createHearts() {
 
 
     heart.style.animationDuration =
-        (4 + Math.random() * 3) + "s";
+        (
+            4 +
+            Math.random() * 3
+        ) + "s";
 
 
-    document.body.appendChild(heart);
+    document
+        .body
+        .appendChild(heart);
 
 
     setTimeout(function() {
@@ -1106,14 +1433,16 @@ function createHearts() {
 
 
 
-/* =====================================
+/* ==================================================
    CONTINUOUS HEARTS
-===================================== */
+================================================== */
 
 setInterval(function() {
 
     let currentScreen =
-        document.querySelector(".screen.active");
+        document.querySelector(
+            ".screen.active"
+        );
 
 
     if (
@@ -1128,8 +1457,7 @@ setInterval(function() {
 
     }
 
-}, 1200);
-
+}, 1400);
 
 </script>
 
